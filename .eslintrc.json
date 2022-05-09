@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "semi": [2, "never"],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "printWidth": 80,
+        "tabWidth": 2,
+        "singleQuote": false,
+        "jsxBracketSameLine": true,
+        "arrowParens": "avoid",
+        "trailingComma": "all"
+      }
+    ]
+  }
 }
